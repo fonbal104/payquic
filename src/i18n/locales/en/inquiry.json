@@ -1,0 +1,15 @@
+{
+  "inquiry": {
+    "labels": { "businessType": "Types of Business", "comments": "Comments", "issuer": "Issuer Name", "amount": "Amount", "currency": "Currency", "transactionDate": "Transaction Date", "last4": "Last 4 Digits of Card Number" },
+    "placeholders": { "issuer": "Visa/Mastercard/JCB", "last4": "0000" },
+    "select": "Select…", "submit": "Submit", "lookup": "Look up Transaction",
+    "terms": "I have read and agree to the website <a>standard terms and conditions</a>.",
+    "notice": "Your personal data will be used to process your inquiry, support your experience throughout this website, and for other purposes described in our <p>privacy policy</p> and <t>standard terms and conditions</t>.",
+    "doneNew": "Thank you. We received your inquiry and will be in touch shortly.",
+    "doneCurrent": "Thank you. We received your request and a representative will be in contact.",
+    "current": { "eyebrow": "Look Up Transaction", "title": "Current Client Inquiry", "merchant": "Merchant Descriptor:",
+      "intro": "Please provide the information below and a representative will be in contact.",
+      "warning": "(For your security and protection, please DO NOT include your credit card details in any correspondence.)" },
+    "businessTypes": { "retail": "Retail", "ecommerce": "E-commerce", "services": "Services", "travel": "Travel & hospitality", "other": "Other" }
+  }
+}

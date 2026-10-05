@@ -1,0 +1,8 @@
+{ "seo": {
+  "home": { "title": "Credit Card Payment Support (BPO)", "description": "{{companyName}} is a BPO providing customer support for credit card payments to more than 1,000 clients globally." },
+  "about": { "title": "About Us", "description": "Learn about {{companyName}}, our mission, and how we support credit card payment services for clients in the United States, Japan and beyond." },
+  "contact": { "title": "Contact Us", "description": "Get in touch with {{companyName}} about credit card payments, whether you are a current or a new client." },
+  "new-client-inquiry": { "title": "New Client Inquiry", "description": "Request a free consultation for global multi-language customer support for credit card processing." },
+  "privacy-policy": { "title": "Privacy Policy", "description": "How {{companyName}} collects, uses and protects your personal data." },
+  "terms": { "title": "Terms and Conditions", "description": "The terms that govern your use of the {{companyName}} website and services." }
+} }

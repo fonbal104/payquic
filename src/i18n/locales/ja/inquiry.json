@@ -1,0 +1,15 @@
+{
+  "inquiry": {
+    "labels": { "businessType": "業種", "comments": "コメント", "issuer": "カード発行会社名", "amount": "金額", "currency": "通貨", "transactionDate": "取引日", "last4": "カード番号の下4桁" },
+    "placeholders": { "issuer": "Visa/Mastercard/JCB", "last4": "0000" },
+    "select": "選択してください", "submit": "送信", "lookup": "取引を照会",
+    "terms": "ウェブサイトの<a>利用規約</a>を読み、同意します。",
+    "notice": "お客様の個人データは、お問い合わせの処理、当ウェブサイトでの体験向上、および<p>プライバシーポリシー</p>と<t>利用規約</t>に記載のその他の目的で使用されます。",
+    "doneNew": "お問い合わせありがとうございます。内容を受け付けました。担当者より折り返しご連絡いたします。",
+    "doneCurrent": "ありがとうございます。リクエストを受け付けました。担当者よりご連絡いたします。",
+    "current": { "eyebrow": "取引照会", "title": "既存のお客様のお問い合わせ", "merchant": "加盟店表記：",
+      "intro": "以下の情報をご入力ください。担当者よりご連絡いたします。",
+      "warning": "（セキュリティ保護のため、やり取りの中にクレジットカード情報を含めないでください。）" },
+    "businessTypes": { "retail": "小売", "ecommerce": "Eコマース", "services": "サービス", "travel": "旅行・宿泊", "other": "その他" }
+  }
+}

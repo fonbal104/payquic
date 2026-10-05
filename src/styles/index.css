@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --brand-dark: #0a2540;
+  --brand-secondary: #23707f;
+  --brand-accent: #10cdc8;
+  --brand-cta: #2fae6d;
+}
+
+@theme inline {
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-cta: var(--brand-cta);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+body { @apply font-sans text-slate-700 antialiased; }
+:focus-visible { outline: 2px solid var(--brand-accent); outline-offset: 2px; }

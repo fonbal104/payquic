@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "profile": "Profile",
+    "login": "Log in / Register",
+    "logout": "Log Out",
+    "switchLang": "Japanese"
+  },
+  "footer": {
+    "about": "<b>{{companyName}}</b> is customer support for credit card payments. We are a BPO of credit card payments support service provider and we provide services for more than 1,000 clients globally.",
+    "support": "Support",
+    "legal": "Legal",
+    "newClient": "New Client Inquiry",
+    "currentClient": "Current Client Inquiry",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "copyright": "Copyright © {{year}} {{companyName}} - Customer Support for Credit Card Payments. All Rights Reserved."
+  },
+  "pages": {
+    "home": "Home",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "new-client-inquiry": "Inquiry",
+    "current-client-inquiry": "Inquiry",
+    "login": "Member Login",
+    "register": "Create Account",
+    "reset-password": "Password Reset",
+    "privacy-policy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "profile": "Client Portal",
+    "verify-email": "Verify Email",
+    "admin-inquiries": "Inquiries"
+  },
+  "placeholder": "This page is built in a later phase.",
+  "legal": {
+    "englishOnly": "This document is currently available in English only."
+  }
+}

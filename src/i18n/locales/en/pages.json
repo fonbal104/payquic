@@ -1,0 +1,91 @@
+{
+  "shared": {
+    "moreInfo": "More Info",
+    "learnMore": "Learn more",
+    "rating": {
+      "reviews": "({{count}} Reviews)",
+      "source": "From Google Business"
+    },
+    "cards": {
+      "current": {
+        "title": "Current Clients Inquiry",
+        "text": "Inquiry regarding credit card payments for current clients.",
+        "cta": "Inquire Now"
+      },
+      "new": {
+        "title": "New Client Inquiry",
+        "text": "For global multi-language customer support for credit card processing.",
+        "cta": "Inquire Now"
+      }
+    },
+    "cta": {
+      "title": "Looking for the Best Customer Support?",
+      "subtitle": "For Credit Card Payments",
+      "button": "Contact Us"
+    },
+    "slider": {
+      "pause": "Pause slideshow",
+      "play": "Play slideshow",
+      "goTo": "Go to slide {{n}}"
+    }
+  },
+  "home": {
+    "hero": {
+      "slide1": {
+        "title": "We are a BPO of Credit Card Payments Support Service Provider",
+        "subtitle": "We cater to assist you with your card payment queries"
+      },
+      "slide2": {
+        "title": "Customer Support for Credit Card Payments",
+        "subtitle": "We can assist your queries about your Card Transactions"
+      }
+    },
+    "who": {
+      "eyebrow": "Who we are",
+      "title": "Company was founded with the desire to help other client to its queries.",
+      "text": "Since its established, the company has been offering top-quality credit card services for clients around the world."
+    },
+    "consult": {
+      "eyebrow": "New Client Inquiry",
+      "title": "Free Consultation.",
+      "text": "For potential clients who are looking for global multi language customer support for credit card processing.",
+      "setup": "Easy to Setup",
+      "secure": "Secure Transactions",
+      "support": "24/7 Support"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Experience the power of us."
+    },
+    "who": {
+      "eyebrow": "Who we are",
+      "title": "Company was founded with the desire to help other client to its queries.",
+      "p1": "<b>{{companyName}}</b> is customer support for credit card payments. We are a BPO of credit card payments support service provider and we provide services for more than 1,000 clients globally.",
+      "p2": "Since its established, the company has been offering top-quality credit card payments support service for clients around the world. We currently provide support services to client in the United States and Japan. As we continuously expand our services and clientele, our team keeps working towards our goal to become a global scale credit card payment support."
+    },
+    "services": {
+      "eyebrow": "What we do",
+      "title": "Our Main Services."
+    },
+    "mission": {
+      "eyebrow": "Our mission",
+      "title": "Evolve your business with payments",
+      "text": "Our company offers a variety of payment services. Even if it is a payment service, the optimal method is completely different depending on the service type. Since there are various payment services, we will propose the most suitable service according to the customer's service form and situation."
+    },
+    "values": {
+      "eyebrow": "Core values",
+      "title": "Providing added value through cashless payment",
+      "text": "The fintech industry is evolving day by day, but with the introduction of payment services, the effort can be significantly reduced. There are many benefits to our customers by introducing a payment service. In addition to improving efficiency, there are various benefits such as sales and attracting customers. We would like to provide the value by looking ahead to what lies ahead, rather than simply reducing the effort."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch and let us know how we can help."
+    },
+    "eyebrow": "Have a question or need help doing something with your card? There's always a way to reach us.",
+    "title": "Contact {{companyName}}."
+  }
+}

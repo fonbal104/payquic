@@ -1,0 +1,8 @@
+{ "seo": {
+  "home": { "title": "クレジットカード決済サポート（BPO）", "description": "{{companyName}}は、世界中の1,000社以上のお客様にクレジットカード決済のカスタマーサポートを提供するBPO企業です。" },
+  "about": { "title": "会社概要", "description": "{{companyName}}の使命と、米国・日本をはじめとするお客様へのクレジットカード決済サポートについてご紹介します。" },
+  "contact": { "title": "お問い合わせ", "description": "既存のお客様も新規のお客様も、クレジットカード決済に関するご相談は{{companyName}}までご連絡ください。" },
+  "new-client-inquiry": { "title": "新規のお客様のお問い合わせ", "description": "クレジットカード決済のグローバルな多言語カスタマーサポートについて、無料相談をお申し込みいただけます。" },
+  "privacy-policy": { "title": "プライバシーポリシー", "description": "{{companyName}}が個人データをどのように収集、利用、保護するかについてご説明します。" },
+  "terms": { "title": "利用規約", "description": "{{companyName}}のウェブサイトおよびサービスのご利用に関する規約です。" }
+} }

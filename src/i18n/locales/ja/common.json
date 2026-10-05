@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "contact": "お問い合わせ",
+    "profile": "プロフィール",
+    "login": "ログイン / 新規登録",
+    "logout": "ログアウト",
+    "switchLang": "English"
+  },
+  "footer": {
+    "about": "<b>{{companyName}}</b>は、クレジットカード決済のカスタマーサポートを提供しています。クレジットカード決済サポートのBPOサービスプロバイダーとして、世界中の1,000社以上のお客様にサービスを提供しています。",
+    "support": "サポート",
+    "legal": "法的情報",
+    "newClient": "新規のお客様のお問い合わせ",
+    "currentClient": "既存のお客様のお問い合わせ",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "copyright": "Copyright © {{year}} {{companyName}} - クレジットカード決済のカスタマーサポート. All Rights Reserved."
+  },
+  "pages": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "contact": "お問い合わせ",
+    "new-client-inquiry": "お問い合わせ",
+    "current-client-inquiry": "お問い合わせ",
+    "login": "会員ログイン",
+    "register": "アカウント作成",
+    "reset-password": "パスワードの再設定",
+    "privacy-policy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "profile": "クライアントポータル",
+    "verify-email": "メールアドレスの確認",
+    "admin-inquiries": "お問い合わせ管理"
+  },
+  "placeholder": "このページは後のフェーズで作成されます。",
+  "legal": {
+    "englishOnly": "この文書は現在、英語版のみご覧いただけます。"
+  }
+}

@@ -6,7 +6,7 @@
     "profile": "Profile",
     "login": "Log in / Register",
     "logout": "Log Out",
-    "switchLang": "Japanese"
+    "switchLang": "English"
   },
   "footer": {
     "about": "<b>{{companyName}}</b> is customer support for credit card payments. We are a BPO of credit card payments support service provider and we provide services for more than 1,000 clients globally.",

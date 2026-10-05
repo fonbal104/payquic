@@ -62,7 +62,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             aria-label={isJapanese ? 'Switch to English' : 'Switch to Japanese'}
           >
-            {isJapanese ? <JapanFlag /> : <USFlag />}
+            {isJapanese ? <USFlag /> : <JapanFlag />}
             <span>{t('nav.switchLang')}</span>
           </Link>
           {user

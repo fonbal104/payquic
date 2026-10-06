@@ -53,7 +53,7 @@ const routes = {
     return [201, { ok: true }];
   },
   'POST /auth/resend-verification': async (req) => {
-    const { identifier } = forgotSchema.parse(req.body);
+    const { identifier } = forgotSchema.omit({ recaptcha: true }).parse(req.body);
     const u = await findByIdentifier(identifier);
     if (u && !u.email_verified) await issueAndSend(u, 'verify', 24);
     return { ok: true };
@@ -64,7 +64,9 @@ const routes = {
     return { ok: true };
   },
   'POST /auth/login': async (req, res) => {
-    const { identifier, password } = loginSchema.parse(req.body);
+    const d = loginSchema.parse(req.body);
+    await verifyRecaptcha(d.recaptcha, req.headers['x-forwarded-for']?.split(',')[0]);
+    const { identifier, password } = d;
     const u = await findByIdentifier(identifier);
     if (u?.locked_until && new Date(u.locked_until) > new Date()) throw new HttpError(429, 'errors.locked');
     dummyHash ??= bcrypt.hashSync('dummy-password', 12);
@@ -91,13 +93,17 @@ const routes = {
     return { user: u ? publicUser(u) : null };
   },
   'POST /auth/forgot': async (req) => {
-    const { identifier } = forgotSchema.parse(req.body);
+    const d = forgotSchema.parse(req.body);
+    await verifyRecaptcha(d.recaptcha, req.headers['x-forwarded-for']?.split(',')[0]);
+    const { identifier } = d;
     const u = await findByIdentifier(identifier);
     if (u) await issueAndSend(u, 'reset', 1);
     return { ok: true }; // same answer whether or not the account exists
   },
   'POST /auth/reset': async (req) => {
-    const { token, password } = resetSchema.parse(req.body);
+    const d = resetSchema.parse(req.body);
+    await verifyRecaptcha(d.recaptcha, req.headers['x-forwarded-for']?.split(',')[0]);
+    const { token, password } = d;
     const userId = await consumeToken(token, 'reset');
     const hash = await bcrypt.hash(password, 12);
     // Using the emailed link also proves the inbox, so the email counts as verified.

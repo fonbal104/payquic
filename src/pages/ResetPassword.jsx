@@ -7,6 +7,7 @@ import { FaCircleUser } from 'react-icons/fa6';
 import TextField from '../components/ui/TextField';
 import Submit from '../components/ui/Submit';
 import Notice from '../components/ui/Notice';
+import Recaptcha from '../components/ui/Recaptcha';
 import { forgotSchema, resetSchema } from '../../shared/schemas';
 import { api, apiError } from '../lib/api';
 import useLocalizedPath from '../lib/useLocalizedPath';
@@ -18,7 +19,8 @@ export default function ResetPassword() {
   const token = useSearchParams()[0].get('token');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
+  const [captchaKey, setCaptchaKey] = useState(0);
+  const { register, handleSubmit, setValue, formState: { errors, isSubmitting } } = useForm({
     resolver: zodResolver(token ? resetSchema.omit({ token: true }) : forgotSchema),
   });
   const submit = async (values) => {
@@ -26,7 +28,11 @@ export default function ResetPassword() {
     try {
       await api(token ? '/auth/reset' : '/auth/forgot', { method: 'POST', body: token ? { ...values, token } : values });
       setMessage(t(token ? 'reset.done' : 'reset.sent'));
-    } catch (e) { setError(apiError(t, e)); }
+    } catch (e) {
+      setError(apiError(t, e));
+      setValue('recaptcha', '');
+      setCaptchaKey((k) => k + 1);
+    }
   };
   return (
     <section className="mx-auto max-w-2xl px-6 py-20">
@@ -41,6 +47,7 @@ export default function ResetPassword() {
           {token
             ? <TextField label={t('reset.newPassword')} type="password" autoComplete="new-password" error={errors.password && t(errors.password.message)} {...register('password')} />
             : <TextField label={t('labels.identifier')} error={errors.identifier && t(errors.identifier.message)} {...register('identifier')} />}
+          <Recaptcha resetKey={captchaKey} error={errors.recaptcha && t(errors.recaptcha.message)} onChange={(v) => setValue('recaptcha', v, { shouldValidate: true })} />
           <Submit busy={isSubmitting}>{t(token ? 'reset.save' : 'reset.submit')}</Submit>
         </form>
       )}

@@ -157,7 +157,9 @@ const routes = {
 
 export default async function handler(req, res) {
   try {
-    const path = new URL(req.url, 'http://x').pathname.replace(/^\/api/, '').replace(/\/$/, '');
+    const requestUrl = new URL(req.url, 'http://x');
+    const rewrittenRoute = requestUrl.searchParams.get('route');
+    const path = (rewrittenRoute ? `/${rewrittenRoute}` : requestUrl.pathname.replace(/^\\/api/, '')).replace(/\\/$/, '');
     const idMatch = path.match(/^\/admin\/inquiries\/([0-9a-f-]{36})$/);
     req.params = { id: idMatch?.[1] };
     const route = routes[idMatch ? `${req.method} /admin/inquiries/:id` : `${req.method} ${path}`];

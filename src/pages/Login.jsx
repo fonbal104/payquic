@@ -7,6 +7,7 @@ import { FaCircleUser } from 'react-icons/fa6';
 import TextField from '../components/ui/TextField';
 import Submit from '../components/ui/Submit';
 import Notice from '../components/ui/Notice';
+import Recaptcha from '../components/ui/Recaptcha';
 import Photo from '../components/ui/Photo';
 import { loginSchema } from '../../shared/schemas';
 import { useAuth } from '../features/auth/AuthContext';
@@ -20,13 +21,21 @@ export default function Login() {
   const [error, setError] = useState('');
   const [info, setInfo] = useState('');
   const [unverified, setUnverified] = useState(false);
-  const { register, handleSubmit, getValues, formState: { errors, isSubmitting } } = useForm({ resolver: zodResolver(loginSchema) });
+  const [captchaKey, setCaptchaKey] = useState(0);
+  const { register, handleSubmit, getValues, setValue, formState: { errors, isSubmitting } } = useForm({
+    resolver: zodResolver(loginSchema),
+  });
 
   // On success the guest guard sends the user to ?redirect= or the profile page.
   const submit = async (values) => {
-    setError(''); setInfo('');
+    setError(''); setInfo(''); setUnverified(false);
     try { await login(values); }
-    catch (e) { setError(apiError(t, e)); setUnverified(e.message === 'errors.notVerified'); }
+    catch (e) {
+      setError(apiError(t, e));
+      setUnverified(e.message === 'errors.notVerified');
+      setValue('recaptcha', '');
+      setCaptchaKey((k) => k + 1);
+    }
   };
   const resend = async () => {
     await api('/auth/resend-verification', { method: 'POST', body: { identifier: getValues('identifier') } }).catch(() => {});
@@ -44,6 +53,7 @@ export default function Login() {
           <TextField label={t('labels.identifier')} autoComplete="username" error={errors.identifier && t(errors.identifier.message)} {...register('identifier')} />
           <TextField label={t('labels.password')} type="password" autoComplete="current-password" error={errors.password && t(errors.password.message)} {...register('password')} />
         </div>
+        <Recaptcha resetKey={captchaKey} error={errors.recaptcha && t(errors.recaptcha.message)} onChange={(v) => setValue('recaptcha', v, { shouldValidate: true })} />
         <Submit busy={isSubmitting}>{t('login.submit')}</Submit>
         <p className="mt-6 text-sm text-brand-accent">
           <Link to={lp('/register')}>{t('login.register')}</Link> <span className="mx-2 text-white/40">|</span> <Link to={lp('/reset-password')}>{t('login.forgot')}</Link>

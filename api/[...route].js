@@ -126,8 +126,10 @@ const routes = {
   },
   'POST /inquiries/new': async (req) => {
     const d = newInquirySchema.parse(req.body);
-    const u = await getSessionUser(req); // optional: linked to the account when logged in
-    await saveInquiry(req, 'new', d, u?.id ?? null, d.email);
+    // Public inquiries do not require a database. Verify the CAPTCHA, then send the inquiry by email.
+    const { recaptcha, terms, ...data } = d;
+    await verifyRecaptcha(recaptcha, req.headers['x-forwarded-for']?.split(',')[0]);
+    await sendInquiry({ kind: 'new', data, replyTo: d.email });
     return [201, { ok: true }];
   },
   'POST /inquiries/current': async (req) => {
